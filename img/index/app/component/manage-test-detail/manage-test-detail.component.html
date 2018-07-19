@@ -1,0 +1,256 @@
+<div class="panel-group" data-color = "green" id="accordion" role="tablist" aria-multiselectable="true">
+<div class="panel panel-default">
+    <div  class="roww">
+        <!--wrap panel heading in span to trigger image change as well as collapse -->
+        <span class="side-tab" data-target="#tab5" data-toggle="tab" role="tab" aria-expanded="false">
+            <div class="panel-heading" role="tab" id="headingFive"  class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                <h4 class="panel-title form-control">Xét nghiệm: </h4>
+            </div>
+        </span>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+        <div class="panel-body">
+
+            <div class="col-md-5">
+                <table class="table  " id="myTable" >
+                    <tbody>
+
+                        <tr>
+
+                            <td> 
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+
+                                            <button class="btn btn-default btn-block">01/29/2016 - Xét nghiệm máu</button>
+                                        </div>
+                                    </div>
+                                    <div class="td-actions  col-md-4">
+                                        <button type="button" rel="tooltip" title="Sửa" class="btn btn-info btn-simple btn-xs" onclick="showEdit3()">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Xóa" class="btn btn-danger btn-simple btn-xs" onclick="deleteRow3(this)">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </td>
+
+
+                        </tr>
+                        <tr>
+                            <td> 
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+
+                                            <button class="btn btn-default btn-block">01/29/2016 - Xét nghiệm nước tiểu</button>
+                                        </div>
+                                    </div>
+                                    <div class="td-actions  col-md-4">
+                                        <button type="button" rel="tooltip" title="Sửa" class="btn btn-info btn-simple btn-xs" onclick="showEdit3()">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Xóa" class="btn btn-danger btn-simple btn-xs" onclick="deleteRow3(this)">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </td>
+
+
+
+                        </tr>
+                        <tr>
+
+                            <td> 
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+
+                                            <button class="btn btn-default btn-block">01/29/2016 - Xét nghiệm máu</button>
+                                        </div>
+                                    </div>
+                                    <div class="td-actions  col-md-4">
+                                        <button type="button" rel="tooltip" title="Sửa" class="btn btn-info btn-simple btn-xs" onclick="showEdit3()">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Xóa" class="btn btn-danger btn-simple btn-xs" onclick="deleteRow3(this)">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div  class="col-md-3" role="tab"  data-toggle="collapse" >
+                                        <button rel="tooltip" class="btn btn-info btn-simple btn-xs" onclick="showEdit03()" title="Thêm mới"  >  +Thêm mới: </button>
+                                    </div>
+
+
+                                </div>
+                            </td>
+
+
+
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-md-7" id="myDIVExit3" style="display: none">
+                <div class="card "  >
+                    <div class="header">
+
+                        <p class="category">Chỉnh sửa thông tin</p>
+                    </div>
+                    <div class="content">
+
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label >Phân loại: </label>
+                                <select class="form-control">
+                                    <option value="A">Xét nghiệm máu</option>
+                                    <option value="A">Xét nghiệm nước tiểu </option>
+                                    <option value="A">O </option>
+
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label>Ngày :</label>
+                                <input type="date" class="form-control"  value="05/10/2018">
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Tên bác sĩ: </label>
+                                <input type="text" class="form-control" placeholder="Tên bác sĩ tại đây">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Ghi chú</label>
+                                <textarea rows="5" class="form-control" placeholder="Mô tả ghi chú tại đây" value="Mike"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12"> 
+                            <div class="form-group col-md-6">
+                                <i><u>+Thêm Tệp: </u></i> <br>
+                                <input type="file">
+
+                                <button type="button" aria-hidden="true"  class="close">  ×</button>
+                                <div ><img  height="130px" width="200px" 
+
+                                           src="don-thuoc-2.jpg"></div>
+
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="row">
+                            <div class="col-md-8">
+
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-info btn-fill" onclick="ExitEdit3()">Lưu</button>
+
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-info btn-fill" onclick="ExitEdit3()">Hủy</button>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="myDIVExit03" style="display: none" >
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label >Phân loại: </label>
+                                <select class="form-control">
+                                    <option value="A">Xét nghiệm máu</option>
+                                    <option value="A">Xét nghiệm nước tiểu </option>
+                                    <option value="A">O </option>
+
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label>Ngày :</label>
+                                <input type="date" class="form-control"  value="05/10/2018">
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Tên bác sĩ: </label>
+                                <input type="text" class="form-control" placeholder="Tên bác sĩ tại đây">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Ghi chú</label>
+                            <textarea rows="5" class="form-control" placeholder="Mô tả ghi chú tại đây" value="Mike"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12"> 
+                        <div class="form-group col-md-3">
+                            <i><u>+Thêm Tệp: </u></i> <br>
+                            <input type="file">
+
+                            <button type="button" aria-hidden="true"  class="close">  ×</button>
+                            <div ><img  height="130px" width="200px" 
+
+                                       src="don-thuoc-2.jpg"></div>
+
+                        </div>
+                        <div class="form-group col-md-5">
+
+
+                        </div>
+
+                        <div class="col-md-4"> 
+                            <div class="col-md-12"></div><br>
+                            <div class="col-md-12"></div><br>
+
+                            <div class="col-md-6">    <button type="submit" class="btn btn-info btn-fill" onclick="ExitEdit03()">Lưu lại</button><br> </div>
+                            <div class="col-md-4">       <button class="btn btn-default btn-block">Huỷ</button> </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+
+        </div> 
+
+
+    </div>
+</div>

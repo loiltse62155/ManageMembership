@@ -1,0 +1,151 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" *ngIf="1">
+                <!-- <div class="panel-group" data-color="green" id="accordion" role="tablist" aria-multiselectable="true"> -->
+                {{CreateArrayOfCusAllergy(customerAllergy)}}
+                <ng-container *ngFor="let item1 of CreateArrayOfCusAllergy(customerAllergy), let index = index">
+
+                    <div class="panel panel-group">
+                        <div class="panel-heading" (click)="GetCusAllergyValue(item1.AllergyId); current = index">
+                            <h3 class="panel-title" style="float: left;">
+                                <i class='glyphicon' [class.glyphicon-chevron-right]="index != current" [class.glyphicon-chevron-down]="index == current"></i> {{item1?.Name}}
+                            </h3>
+                            <div class="td-actions text-right">
+                               
+                                <button type="button" rel="tooltip" title="Xóa" class="btn btn-danger btn-simple btn-xs" (click)="askForDeleteAllergyType(item1.AllergyId)">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="panel-collapse " id="collapse1" [class.collapse]='current != index'>
+                            <div class="panel-body">
+                                <div class="row" *ngIf="check">
+                                    <ng-container  *ngFor="let item of CusAllergyValue">
+                                        <div *ngIf="!item.value" class="col-md-2">
+                                            <div class="alert alert-info">
+                                                <button (click)="toggle($event)" class="btn btn-info btn-simple btn-xs" id="{{item?.Value}}" name="{{item?.Id}}">{{item?.Value}}</button>
+                                                <!-- <span>{{item?.Value}}</span> -->
+                                                <button type="button" aria-hidden="true" class="close" (click)="askForDelete(item.Id)">×</button>
+
+                                            </div>
+
+                                        </div>
+                                    </ng-container>
+
+
+                                </div>
+                               
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div>
+                                            <button [ngClass]="{'show-up': index == showUpIndex}" (click)="toggle($event)" id="{{index}}" type="button" rel="tooltip"
+                                                class="btn btn-info btn-simple btn-xs" (click)="ShowHideAddAllergy()" tooltip="Thêm mới"
+                                                title="Thêm mới">
+                                                <u> +Thêm mới</u>
+                                            </button>
+                                        </div>
+                                        <form *ngIf="showAddAllergy" ngNativeValidate name="index" (submit)="add(addAllergy);" #addAllergy="ngForm" id="{{index}}">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p></p>
+
+                                                    <input type="text" [(ngModel)]="Value" placeholder="tên dị ứng" name="Value" [value]="addField" required/>
+                                                    <input [(ngModel)]="item1.CustomerId" name="CustomerId" hidden/>
+                                                    <input [(ngModel)]="item1.AllergyId" name="AllergyId" hidden/>
+                                                </div>
+
+                                            </div>
+                                            <p></p>
+                                            <button type="submit" class="btn btn-info btn-fill ">Xong</button>
+
+                                        </form>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div>
+                                            <button [ngClass]="{'show-up': index == showUpIndex}" id="{{index}}" type="button" rel="tooltip" class="btn btn-info btn-simple btn-xs"
+                                                (click)="ShowUpdateAllergy()" tooltip="Thêm mới" title="Thêm mới">
+                                                <u>+Chỉnh sửa:</u>
+                                            </button>
+                                        </div>
+                                        <form *ngIf="showUpdateAllergy" ngNativeValidate name="index" (submit)="update(updateAllergy);" #updateAllergy="ngForm" id="{{index}}">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p></p>
+
+                                                    <input type="text" [(ngModel)]="Value" placeholder="tên dị ứng" name="Value1" value="{{clickedItem}}" [value] = "updateField" required/>
+                                                    <input [(ngModel)]="item1.CustomerId" name="CustomerId" hidden/>
+                                                    <input [(ngModel)]="item1.AllergyId" name="AllergyId" hidden/>
+                                                    <input [(ngModel)]="item1.Id" name="CusAllId" hidden/>
+                                                </div>
+
+                                            </div>
+                                            <p></p>
+                                            <button type="submit" class="btn btn-info btn-fill ">Xong</button>
+
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </ng-container>
+                <!-- </div> -->
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" rel="tooltip" class="btn btn-info btn-simple btn-xs" (click)="ShowHideAddAllergyType()" title="Thêm mới">
+                            <u>+Thêm dị ứng mới?</u>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <form *ngIf="showAddAllergyType" name="index" (submit)="addAllergy" #addAllergy="ngForm" id="{{index}}">
+            <div class="row" >
+                <div class="col-md-12">
+                    <div class="card ">
+                        <div class="header">
+                            <h4 class="title">
+                                <b>Thêm dị ứng mới</b>
+                            </h4>
+                            <p class="category">Hãy cập nhật loại dị ứng của bạn!</p>
+                        </div>
+                        <div class="content">
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="column small-12 large-2">
+                                        <label class="sbw_light">Loại:</label>
+                                        <br />
+                                        <!-- [(ngModel)]="passenger.Title" -->
+                                        <form (submit)="addType(addAllergyType)" #addAllergyType="ngForm">
+                                            <select (change)="toggle2($event)">
+                                                <option *ngFor="let allType of allergy" [value]="allType.Id">{{allType.Name}}</option>
+                                            </select><p></p>
+                                            <button type="submit" class="btn btn-info btn-fill ">Thêm</button>
+
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

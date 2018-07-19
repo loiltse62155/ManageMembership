@@ -1,0 +1,51 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" >
+                <ng-container *ngFor="let item1 of medicalHistory, let index = index">
+
+                    <div class="panel panel-group">
+                        <div class="panel-heading" >
+                            <h3 class="panel-title" style="float: left;">
+                                <i class='glyphicon' [class.glyphicon-chevron-right]="index != current" [class.glyphicon-chevron-down]="index == current"></i> {{item1?.Name}}
+                            </h3>
+                            <div class="td-actions text-right">
+                               
+                                <button type="button" rel="tooltip" title="Xóa" class="btn btn-danger btn-simple btn-xs" >
+                                    
+                                </button>
+                            </div>
+                        </div>
+                        <div class="panel-collapse " id="collapse1" [class.collapse]='current != index'>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <ng-container  >
+                                        <div  class="col-md-2">
+                                            <div class="alert alert-info">
+                                                <button class="btn btn-info btn-simple btn-xs">rwgwgwegwg</button>
+                                                <!-- <span>{{item?.Value}}</span> -->
+                                                <button type="button" aria-hidden="true" class="close" >×</button>
+
+                                            </div>
+
+                                        </div>
+                                    </ng-container>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </ng-container>
+                <!-- </div> -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<app-medical-history-disease-type-detail></app-medical-history-disease-type-detail>
+<app-manage-surgery-detail></app-manage-surgery-detail>
+<app-manage-vaccine-detail></app-manage-vaccine-detail>

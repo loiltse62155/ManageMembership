@@ -1,0 +1,92 @@
+<div class="col-md-6">
+    <div class="card " id="myDIV" style="display: block">
+        <div class="header">
+            <h4 class="title">Danh sách</h4>
+            <p class="category">Chỉ số được thống kê theo thời gian</p>
+        </div>
+        <div class="content">
+            <div class="table-full-width">
+                <table class="table" id="myTable">
+                  <tbody>
+
+                    <tr>
+                      <td>
+                        <div class="checkbox">
+                          <input id="checkbox100" type="checkbox" onclick="toggle(this)">
+                          <label for="checkbox100"></label>
+                        </div>
+                      </td>
+                      <td>
+                        <b>Chọn tất cả</b>
+                      </td>
+                      <td class="td-actions text-right">
+                        <button type="button" rel="tooltip" title="Sửa" class="btn btn-info btn-simple btn-xs" style="display: none">
+                          <i class="fa fa-edit"></i>
+                        </button>
+                        <button type="button" rel="tooltip" title="Xóa" class="btn btn-danger btn-simple btn-xs" style="display: none">
+                          <i class="fa fa-times"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <ng-container *ngFor="let cord of arrHis">
+                      <tr>
+                        <td>
+                          <div class="checkbox" >
+                            <input id="checkbox1" type="checkbox" name="all">
+                            <label for="checkbox1"></label>
+                          </div>
+                        </td>
+                        <td>{{cord?.Date.substring(0, cord?.Date.length -9)}}</td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="Sửa" class="btn btn-info btn-simple btn-xs" (click)="showEditRun(cord)">
+                            <i class="fa fa-edit"></i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Xóa" class="btn btn-danger btn-simple btn-xs" (click)="removeHeatlCare(cord?.CusHCIndexId)">
+                            <i class="fa fa-times"></i>
+                          </button>
+                        </td>
+                      </tr>
+                     
+                    </ng-container>
+                    <tr>
+                      <td>
+                          <div class="checkbox" style="display: none">
+                              <input id="checkbox633" type="checkbox">
+                              <label for="checkbox633"></label>
+
+                          </div>
+                      </td>
+                      <td ><button type="button" rel="tooltip" class="btn btn-info btn-simple btn-xs" (click)="showAddrun()" title="Thêm mới">
+                              +Thêm mới
+                          </button></td>
+                      <td class="td-actions text-right" >
+                          <button type="button" rel="tooltip" title="Sửa" class="btn btn-info btn-simple btn-xs" style="display: none">
+                              <i class="fa fa-edit"></i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Xóa" class="btn btn-danger btn-simple btn-xs" style="display: none">
+                              <i class="fa fa-times"></i>
+                          </button>
+                      </td>
+
+                  </tr>
+
+                  </tbody>
+                </table>
+            </div>
+
+            <div class="footer">
+                <hr>
+                <div class="stats">
+                    
+                    <button type="submit" class="btn btn-info btn-fill pull-right" (click)="showGraRun()">Xem sơ đồ</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

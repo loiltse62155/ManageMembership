@@ -1,0 +1,28 @@
+<div class="col-md-8">
+  <div class="card">
+    <div class="header">
+      <h4 class="title">Chỉ số cơ bản</h4>
+    </div>
+    <div class="content" style="padding-left: 80px">
+      
+      <div class="row">
+        <ng-container *ngFor="let HC of arrHC; let st = index">
+          <div>
+            <button type="submit" class="basic-index" id="btnIF">
+              <h6>
+                <p>{{HC?.HealthCareIndexName}}</p>
+              </h6>
+              <p>
+                <b>{{HC?.Value}} {{HC?.Unit}}</b>
+              </p>
+              <h6>{{HC?.Date?.substring(0, HC.Date.length -9)}}</h6>
+            </button>
+          </div>
+        </ng-container>
+      </div>
+
+
+
+  </div>
+    </div>
+  </div>

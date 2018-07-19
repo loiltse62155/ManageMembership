@@ -1,0 +1,63 @@
+<div class="col-md-6" id="myDIVNew" style="display: block">
+  <div class="card ">
+    <div class="header">
+      <h4 class="title">
+        <b>Thêm chỉ số mới</b>
+      </h4>
+      
+      <p class="category">Hãy cập nhật chỉ số mới nhất của bạn!</p>
+    </div>
+      <form (submit)="add(addHealth)" #addHealth="ngForm">
+        <div class="content">
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Ngày nhập </label>
+                <input   [ngModel]="today|date:'yyyy-MM-dd'" name="Date" type="date" class="form-control" value="05/10/2018">
+              </div>
+            </div>
+            <div class="col-md-4">
+             
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>{{infoAdd.Name}}</label>
+                <input type="number" *ngIf="infoAdd.Type=='number'" [(ngModel)]="Value" name="Value" class="form-control" value="167">
+                <input type="text" *ngIf="infoAdd.Type !='number'" [(ngModel)]="Value" name="Value" class="form-control" value="167">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Đơn Vị</label>
+                <select class="form-control">
+                  <option value="nam">{{infoAdd.Unit}} </option>
+                  
+                </select>
+              </div>
+            </div>
+          </div>
+          <p></p>
+          <div class="row">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-3">
+              <button class="btn btn-info btn-fill" >Lưu lại</button>
+
+            </div>
+            <div class="col-md-3">
+              <button class="btn btn-info btn-fill" >Cancel</button>
+
+            </div>
+            <div class="col-md-4">
+
+            </div>
+          </div>
+
+        </div>
+      </form>
+  </div>
+</div>

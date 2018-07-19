@@ -1,0 +1,119 @@
+<div class="panel panel-default">
+  <!--wrap panel heading in span to trigger image change as well as collapse -->
+  <span class="side-tab " data-target="#tab1" data-toggle="tab" role="tab" aria-expanded="false">
+      <div class="panel-heading" role="tab" id="headingOne"data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <h4 class="panel-title">Loại bệnh</h4>
+      </div>
+  </span>
+
+  <div id="collapseOne" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body ">
+          <div class="">
+              <table class="table table-hover table-striped ">
+
+                      <thead >
+                          <th class="col-md-1">STT</th>
+                          <th class="col-md-2">Bệnh</th>
+                          <th class="col-md-1">Bắt đầu</th>
+                          <th class="col-md-1">Kết thúc</th>
+                          <th class="col-md-2">Bác sĩ</th>
+                          <th class="col-md-2">Ghi chú</th>
+
+                          <th class="col-md-3">Chức năng</th>
+
+                      </thead>
+                  <tbody>
+
+                      <tr>
+                          <td class="col-md-1">1</td>
+                          <td  class="col-md-2">   <input disabled type="text" class="form-control" placeholder="Tên bệnh" value="Bệnh ung thư"/></td>
+                          <td  class="col-md-1" > <input disabled type="date" class="form-control"  /></td>
+                          <td class="col-md-1"> <input disabled type="date"  class="form-control " /></td>
+                          <td class="col-md-2"> <input disabled type="text" placeholder="Tên bác sĩ "  class="form-control " value="Thành Phạm" /></td>
+                          <td class="col-md-2">  <input disabled type="text" value="Giai đoạn cuối"  class="form-control "/></td>
+                          <td class="col-md-3" >
+                            <div class="row col-md-12">
+                                <div class="col-md-1"> 
+                                     <button type="button" rel="tooltip" title="Chỉnh sửa" class="btn btn-danger btn-simple btn-xs  " onclick="deleteRow(this)">
+                                        <i class="fa fa-edit " style=" color:green"></i>
+                                    </button>
+                                </div>
+                            
+                                    <div class="col-md-1">
+                                        <button type="button" rel="tooltip" title="Xác nhận" class="btn btn-danger btn-simple btn-xs " onclick="deleteRow(this)">
+                                  <i class="fa fa-check-circle-o " style=" color:green"></i>
+                              </button>
+                            </div>
+                              <div class="col-md-1">
+                                  <button type="button" rel="tooltip" title="Xóa" class="btn btn-danger btn-simple btn-xs " onclick="deleteRow(this)">
+                                  <i class="fa fa-times "></i>
+                              </button>
+                            </div>
+                            
+                            </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>1</td>
+                          <td  class="col-md-2">   <input disabled type="text" class="form-control" placeholder="Tên bệnh" value="Bệnh ung thư"/></td>
+                          <td  class="col-md-1" > <input disabled type="date" class="form-control"  /></td>
+                          <td> <input disabled type="date"  class="form-control col-md-1" /></td>
+                          <td> <input disabled type="text" placeholder="Tên bác sĩ "  class="form-control col-md-2" value="Thành Phạm" /></td>
+                          <td>  <input disabled type="text" value="Giai đoạn cuối"  class="form-control col-md-2"/></td>
+                          <td class="col-md-3">
+                              <button type="button" rel="tooltip" title="Chỉnh sửa" class="btn btn-danger btn-simple btn-xs" onclick="deleteRow(this)">
+                                  <i class="fa fa-edit" style=" color:green"></i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Xác nhận" class="btn btn-danger btn-simple btn-xs" onclick="deleteRow(this)">
+                                  <i class="fa fa-check-circle-o" style=" color:green"></i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Xóa" class="btn btn-danger btn-simple btn-xs" onclick="deleteRow(this)">
+                                  <i class="fa fa-times"></i>
+                              </button>
+                          </td>
+                      </tr>
+                        <tr>
+                          <td>1</td>
+                          <td  class="col-md-2">   <input disabled type="text" class="form-control" placeholder="Tên bệnh" value="Bệnh ung thư"/></td>
+                          <td  class="col-md-1" > <input disabled type="date" class="form-control"  /></td>
+                          <td> <input disabled type="date"  class="form-control col-md-1" /></td>
+                          <td> <input disabled type="text" placeholder="Tên bác sĩ "  class="form-control col-md-2" value="Thành Phạm" /></td>
+                          <td>  <input disabled type="text" value="Giai đoạn cuối"  class="form-control col-md-2"/></td>
+                          <td class="col-md-3">
+                              <button type="button" rel="tooltip" title="Chỉnh sửa" class="btn btn-danger btn-simple btn-xs" onclick="deleteRow(this)">
+                                  <i class="fa fa-edit" style=" color:green"></i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Xác nhận" class="btn btn-danger btn-simple btn-xs" onclick="deleteRow(this)">
+                                  <i class="fa fa-check-circle-o" style=" color:green"></i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Xóa" class="btn btn-danger btn-simple btn-xs" onclick="deleteRow(this)">
+                                  <i class="fa fa-times"></i>
+                              </button>
+                          </td>
+                      </tr>
+                      <tr><td>
+                          <div class="font-icon-list col-md-3 ">
+                              <div class="font-icon-detail col-md-3"><h3 class="pe-7s-plus"></h3>
+
+                              </div>
+                          </div></td>
+
+                          <td> </td>
+                          <td> </td>
+                          <td></td>
+                          <td> </td>
+                          <td></td>
+                          <td></td>
+
+                      </tr>
+
+
+                  </tbody>
+
+              </table>  
+
+          </div>
+      </div>
+  </div>
+</div> 
+

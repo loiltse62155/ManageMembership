@@ -1,0 +1,37 @@
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { DeleteHealthIndexService } from 'src/app/service/delete-health-index.service';
+import { HistoryHealthIndexService } from 'src/app/service/history-health-index.service';
+
+@Component({
+  selector: 'app-item-history',
+  templateUrl: './item-history.component.html',
+  styleUrls: ['./item-history.component.css',
+  ]
+})
+export class ItemHistoryComponent implements OnInit {
+  @Input() index: number;
+
+  @Output() showEdit = new EventEmitter<any>();
+  @Output() showAdd = new EventEmitter();
+  @Output() showGra = new EventEmitter();
+  constructor(private deleteService: DeleteHealthIndexService, private getService: HistoryHealthIndexService) {
+
+  }
+  arrHis = [];
+  removeHeatlCare(id) {
+    this.deleteService.deleteHealthIndex(id).subscribe(data => console.log(data));
+  }
+  showGraRun() {
+    this.showGra.emit();
+  }
+  showAddrun() {
+    this.showAdd.emit();
+  }
+  ngOnInit() {
+    this.getService.getHistoryHealthCareIndex(3).subscribe(data => { this.arrHis = data; console.log(data); });
+  }
+  showEditRun(ob) {
+    this.showEdit.emit(ob);
+  }
+
+}

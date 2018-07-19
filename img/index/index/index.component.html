@@ -1,0 +1,10 @@
+<app-client-info [id]="idCus"></app-client-info>
+<app-basic-index #healthIndex (loadHis)="loadHistory($event)"></app-basic-index>
+<app-item-history *ngIf="showHis"
+                  (showAdd)="showAddHealth()"
+                  (showEdit)="showEditHealth($event)"
+                  (showGra)="showGraHealth($event)"
+                  [index]="indexHis" [infoAdd]="infoAdd"></app-item-history>{{health?.Date}}
+<app-add-item-history (close)="close($event)" [infoAdd]="infoAdd" [obUpDate]="healthUp" [idHis]="indexHis"  [idCustom]="idCus"  *ngIf="showAdd"></app-add-item-history>
+<app-edit-item-history (close)="close($event)" [infoAdd]="infoAdd"  [obUpDate]="healthUp" [idHis]="indexHis"  [idCustom]="idCus" *ngIf="showUp"></app-edit-item-history>
+<app-show-graph [dataG]="graphData" *ngIf="showGrap"></app-show-graph>

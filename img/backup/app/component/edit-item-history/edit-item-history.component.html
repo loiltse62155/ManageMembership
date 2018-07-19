@@ -1,0 +1,58 @@
+<div class="col-md-6" id="myDIVNew" style="display: block">
+    <div class="card ">
+        <div class="header">
+            <h4 class="title">
+                <b>Thay đổi chỉ số </b>
+            </h4>
+            <p class="category">Hãy cập nhật chỉ số mới nhất của bạn!</p>
+        </div>
+        <div class="content">
+          <form (submit)="update(updateF)" #updateF="ngForm">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Ngày nhập</label>
+                  <input type="date" [(ngModel)]="Date" name="Date" class="form-control" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label>{{obUpDate.HealthCareIndexName}}</label>
+                  <input type="text" name="Value" [(ngModel)]="obUpDate.Value"   class="form-control" >
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Đơn vị</label>
+
+                  <select class="form-control">
+                    <option> {{obUpDate?.Unit}} </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5">
+
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-info btn-fill" >Lưu lại</button>
+
+              </div>
+              <div class="col-md-5">
+
+              </div>
+
+            </div>
+
+          </form>
+        </div>
+    </div>
+  </div>

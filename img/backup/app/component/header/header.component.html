@@ -1,0 +1,35 @@
+
+  <div class="sidebar" data-color = "green">
+
+      <div class="sidebar-wrapper" >
+          <div class="logo">
+       
+              <a routerLink="" class="simple-text">CareX - PHR
+
+              </a>
+          </div>
+
+          <ul class="nav">
+              <li *ngFor= "let header of headers"
+              
+              >
+                  <a routerLink="/{{header.routerLink}}"
+                  [class.active]="header === selectedHeader"
+              (click)="onSelect(header)"
+                  >
+                      <i class="{{header.Icon}}"></i>
+                      <p>{{header.Name}}</p>
+                  </a>
+              </li>
+
+              <li class="active-pro">
+                  <a routerLink="#">
+                      <i class="pe-7s-rocket"></i>
+                      <p>Nâng cấp lên bản PRO</p> 
+                      <br>
+                      <p>Version 1.1- Còn 400MB</p>
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>

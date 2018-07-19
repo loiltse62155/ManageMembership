@@ -1,0 +1,25 @@
+<div class="card row col-md-12">
+  <label>Multil Select</label>
+  <div>
+    <div class="alert alert-info" *ngFor="let item of select, let index = index" style="display: inline-block;margin: 3px 3px">
+      <button (click)="toggle($event)" class="btn btn-info btn-simple btn-xs" id="{{item?.Value}}" name="{{item?.Id}}">{{item}}</button>
+      <!-- <span>{{item?.Value}}</span> -->
+      <button type="button" rel="tooltip" title="Xóa" class="btn btn-danger btn-simple btn-xs" >
+        <i class="fa fa-times" (click) = "clickToDelete(index)"></i>
+      </button>
+    </div>
+    <div class="card">
+      <!-- <div class="alert alert-info">{{seHover}}</div> -->
+      <div style="justify-content: center;align-items: center">
+        <input type="text" name="name" [(ngModel)]="search" value="" class="form-control" (focus)="focus = true" (focusout)="finish()"
+          (keydown.enter)="pushNew($event.target.value)" (keydown.backspace)="valuechange($event.target.value)" />
+      </div>
+      <div *ngIf="focus" (mouseleave)="seHover = ''">
+        <div *ngFor="let item of arr | demoPipe:search:'search' ; let i = index" style="border: 2px; box-shadow: 3px">
+          <div (mouseenter)="selected(item)" class="nha form-control" >{{item}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

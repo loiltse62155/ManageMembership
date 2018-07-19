@@ -1,0 +1,8 @@
+<ng-container *ngIf="DisplayCard">
+  <ng-container *ngFor="let Card of CardArrayData">
+    <app-manage-card-detail [CardData]="Card"
+                            (OpenDetailCard)="OpenDetailCard($event)"
+                            (DeleteCard)="DeleteCard($event)" ></app-manage-card-detail>
+  </ng-container>
+  <
+</ng-container>
